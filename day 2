@@ -1,0 +1,144 @@
+Ex-3
+
+create table Player (
+pid integer primary key,
+pname varchar2(20) not null,
+ranking integer
+)
+
+Ex-4
+
+create table tournament(
+tid integer primary key,
+tname varchar2(30) not null,
+startdt date not null,
+enddt date not null,
+prize integer not null
+)
+
+Ex-5
+
+create table Match 
+( 
+MId integer NOT NULL,
+TId integer CONSTRAINT fk_Match_Tournament references Tournament(TId),
+Player1 integer CONSTRAINT fk_pla references Player(PId),
+Player2 integer CONSTRAINT fk_plaq references Player(PID),
+MatchDt DATE NOT NULL,
+Winner integer CONSTRAINT fk_win  references Player(PId),
+Score varchar2(30) NOT NULL,
+CONSTRAINT pk_mid primary key (MId,TId),
+CONSTRAINT ch_pl21 CHECK (Player1 <> Player2)
+);
+
+Ex-6
+ALTER TABLE Player ADD(MatchesPlayed NUMBER,MatchesWon NUMBER);
+
+Ex -7
+
+ALTER TABLE Player DROP(ContactNo);
+
+Ex-8
+
+ALTER TABLE Player RENAME COLUMN PId TO PlayerId;
+
+Ex-9
+
+alter table player modify pname varchar2(50);
+
+collabrative assignment 2
+
+create table shopper (shopperid integer constraint acc_shop_pk primary key ,shoppername varchar2(20) constraint acc_nn not null,
+gender char(6) constraint acc_shop_ck check(gender in('Male','Female')),mobileno number constraint shop_ak not null,
+address varchar2(50)
+);
+
+collabrative assignment-3
+
+alter table shopper modify mobileno varchar2(15);
+
+Assignment - 4
+
+create table article (
+arcode char(5) primary key check(arcode like 'A%'),
+arname varchar2(30) not null,
+rate number(8,2)  ,
+quantity number(4) default 0 check(Quantity>=0),
+class char(1) check(class in('A','B','C'))
+);
+
+Assignment - 5
+
+create table store (
+name varchar2(20) primary key,
+location varchar2(30) not null,
+managername varchar(30) unique
+);
+
+Assignment - 6
+
+alter table store rename column name to storename;
+
+Assignment - 7
+
+create table bill (
+billno number primary key,
+storename varchar2(20),
+shopperid number,
+arcode char(5),
+amount number,
+billdate date,
+quantity number(4) default 1,
+constraint an_qua check(quantity>0),
+constraint am_sto foreign key (storename) references
+store (storename),
+constraint an_sho foreign key (shopperid) references
+shopper(shopperid),
+constraint ah_arc foreign key (arcode) references
+article(arcode)
+);
+ 
+ Assignment - 8
+ 
+ create table supplier (
+supplierid varchar2(6) primary key,
+name varchar2(30),
+contactno varchar2(15) not null,
+emailid varchar2(30)
+);
+
+Assignment - 9
+
+alter table supplier add city varchar2(10) ;
+
+assignment - 10
+
+alter table supplier drop (emailid) ;
+
+assignment - 11
+
+create table city (city varchar2(20) constraint an_cp unique) ;
+
+assignment - 12
+
+alter table city drop(city);
+
+assignment - 13
+
+create table address (
+houseno number ,
+street varchar2(30),
+city varchar2(20),
+zip number(6),
+state varchar2(5),
+constraint jk_addr primary key(HouseNo,Street,city),
+constraint sk_addr foreign key(city) references City(city),
+constraint ch_zip check(ZIP>=0)
+);
+
+assignment - 14
+
+alter table address modify state varchar2(20);
+
+
+ 
