@@ -1,0 +1,45 @@
+Ex-10
+
+insert into salesman (sid,sname,location) values ('11','Elizabeth','London');
+
+Ex-11
+
+insert into product (ProdId,PDesc,Price,Category,Discount) values (110,'Bat',50,'Sports',NULL);
+
+Ex-12
+
+select * from product
+
+Ex-13
+
+select prodid,price,category from product
+
+Ex-14
+
+select distinct category from product
+
+Ex-15
+
+select prodid,pdesc,category,discount from product where category = 'Apparel'
+
+Ex-16
+
+select prodid,pdesc,category,discount from product where pdesc is NULL
+
+Ex-17
+
+select prodid,pdesc,category,discount from product where category = 'Apparel' and discount > 5
+
+Ex-18
+
+update product set discount = 25 where category in 'Sports'
+
+Ex-19
+
+update product set price = 50 where category in ('Apparel') and pdesc in ('Trouser');
+
+Ex-20
+
+update salesman set sname = 'Jenny' , location = 'Bristol' where sid in 3;
+
+Ex-21
