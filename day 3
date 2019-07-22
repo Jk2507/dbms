@@ -70,3 +70,82 @@ C.Assignment-19
 
 insert into Supplier(Supplierid,Name,ContactNo,city) values ('S501','Avaya Ltd',9012345678,'Mysore')
 
+Assignment-20
+
+select descr,price from item where price = 2500 or price = 1800
+
+Assignment-21
+
+select * from quotation where qstatus not in 'Accepted';
+
+Assignment-22
+
+select designation,salary from EmpDetails where designation = 'Manager' or designation = 'Billing Staff';
+
+Assignment-23
+
+select roid,location from RetailOutlet where managerid is NULL; 
+
+Assignment-24
+
+select orderid,quotationid,status from orders where OrderDate between '1-Dec-2014' and '1-Jan-2015';
+
+Assignment-25
+
+select itemcode,Descr,price from Item where descr like '%Shirt' and Category in 'B'
+
+Assignment-26
+
+select Distinct designation,salary from EmpDetails
+
+Assignment-27
+
+select itemcode,descr,price from item
+
+Assignment-28
+
+select quotationid,sname from Quotation where qstatus = 'Accepted' or qstatus='Rejected'
+
+Assignment-29
+
+select itemcode,descr,price from item where descr like '_r%'
+
+Assignment-30
+
+select distinct itemtype from item
+
+Assignment-31
+
+select orderid,quotationid,status,pymtdate from orders where status = 'Ordered'
+
+Assignment-32
+
+select distinct itemtype,category from item
+
+Assignment-33
+
+select Empid,Salary as "Current Salary",(salary+(salary/10)) as "New Salary",(salary/10) as "Incremented Amount" from EmpDetails
+
+Assignment-34
+
+insert into city (city) values ('Mysore')
+
+Assignment-35
+
+insert into Address(HouseNo,Street,city,zip,state) values (350, 'Electronics City','Mysore',570018,'Karnataka')
+
+Assignment-36
+
+insert into Article (Arcode,Arname,Rate,Quantity,Class) values ('A1002','Keyboard',1000,10,'B')
+
+Assignment-37
+
+select quotationid,qdate,quotedprice from Quotation where QUOTEDPRICE > 1400 and QUOTEDPRICE < 2150
+
+Assignment-38
+
+select itemtype,descr,price from item where price > 4000
+
+Assignment-39
+
+select designation,salary from EmpDetails where salary between 2500 and 5000
